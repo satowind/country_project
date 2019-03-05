@@ -32,11 +32,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('countries', 'CountryController@show');
 
 
-    Route::put('countries/', 'CountryController@update');
+    Route::put('countries', 'CountryController@update');
 
     Route::put('countries/{id}', 'CountryController@update');
 
-    Route::post('countries/{id}', 'CountryController@destroy');
+    Route::delete('countries', 'CountryController@destroy');
+
+    Route::delete('countries/{id}', 'CountryController@destroy');
 
     Route::get('activities', 'LogController@show');
 
